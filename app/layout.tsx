@@ -6,7 +6,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Journeyz - AI-Powered Travel Planning',
+  title: 'Hotfoot-AI - AI-Powered Travel Planning',
   description: 'Plan your perfect trip with our AI-powered travel assistant that adapts to unexpected changes in real-time.',
 };
 

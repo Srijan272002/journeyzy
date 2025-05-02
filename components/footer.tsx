@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Plane } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -8,8 +9,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="flex items-center space-x-2 mb-6">
-              <Plane className="h-6 w-6 text-blue-500" />
-              <span className="text-xl font-bold text-white">Journeyz</span>
+              <Image src="/icon.png" alt="Hotfoot-AI Logo" width={24} height={24} className="text-blue-500" />
+              <span className="text-xl font-bold text-white">Hotfoot-AI</span>
             </div>
             <p className="text-gray-400 mb-6">
               AI-powered travel assistant that creates personalized itineraries and adapts to changes in real-time.
@@ -78,7 +79,7 @@ export default function Footer() {
         
         <div className="border-t border-gray-800 pt-8">
           <p className="text-center text-gray-500">
-            © {new Date().getFullYear()} Journeyz. All rights reserved.
+            © {new Date().getFullYear()} Hotfoot-AI. All rights reserved.
           </p>
         </div>
       </div>

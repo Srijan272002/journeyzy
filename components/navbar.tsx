@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Plane } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,8 +33,8 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <Plane className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold">Journeyz</span>
+              <Image src="/icon.png" alt="Hotfoot-AI Logo" width={24} height={24} />
+              <span className="text-xl font-bold">Hotfoot-AI</span>
             </Link>
           </div>
           

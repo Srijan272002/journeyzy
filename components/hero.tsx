@@ -56,56 +56,116 @@ export default function Hero() {
             className="relative grid grid-cols-2 gap-4"
           >
             <div className="space-y-4">
-              <div className="relative h-[200px] rounded-xl overflow-hidden">
+              <motion.div 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20,
+                  delay: 0.3
+                }}
+                className="relative h-[200px] rounded-xl overflow-hidden"
+              >
                 <Image
                   src="/2346815-removebg-preview.png"
                   alt="Vintage Traveler"
                   fill
                   className="object-contain"
                 />
-              </div>
-              <div className="relative h-[200px] rounded-xl overflow-hidden">
+              </motion.div>
+              <motion.div 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20,
+                  delay: 0.5
+                }}
+                className="relative h-[200px] rounded-xl overflow-hidden"
+              >
                 <Image
                   src="/24094535_qpmp_ive4_211101-removebg-preview.png"
                   alt="Next Events"
                   fill
                   className="object-contain"
                 />
-              </div>
-              <div className="relative h-[200px] rounded-xl overflow-hidden">
+              </motion.div>
+              <motion.div 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20,
+                  delay: 0.7
+                }}
+                className="relative h-[200px] rounded-xl overflow-hidden"
+              >
                 <Image
                   src="/traveling-concept-illustration.png"
                   alt="Travel Concept"
                   fill
                   className="object-contain"
                 />
-              </div>
+              </motion.div>
             </div>
             <div className="space-y-4 mt-8">
-              <div className="relative h-[200px] rounded-xl overflow-hidden">
+              <motion.div 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20,
+                  delay: 0.4
+                }}
+                className="relative h-[200px] rounded-xl overflow-hidden"
+              >
                 <Image
                   src="/Hotel Booking-pana.png"
                   alt="Hotel Booking"
                   fill
                   className="object-contain"
                 />
-              </div>
-              <div className="relative h-[200px] rounded-xl overflow-hidden">
+              </motion.div>
+              <motion.div 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20,
+                  delay: 0.6
+                }}
+                className="relative h-[200px] rounded-xl overflow-hidden"
+              >
                 <Image
                   src="/171056173_10665486-removebg-preview.png"
                   alt="Passport and Tickets"
                   fill
                   className="object-contain"
                 />
-              </div>
-              <div className="relative h-[200px] rounded-xl overflow-hidden">
+              </motion.div>
+              <motion.div 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20,
+                  delay: 0.8
+                }}
+                className="relative h-[200px] rounded-xl overflow-hidden"
+              >
                 <Image
                   src="/19948564_6166308-removebg-preview.png"
                   alt="Mobile App"
                   fill
                   className="object-contain"
                 />
-              </div>
+              </motion.div>
             </div>
             
             {/* Decorative elements */}
