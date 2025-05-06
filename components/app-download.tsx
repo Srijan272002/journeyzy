@@ -17,18 +17,20 @@ export default function AppDownload() {
             transition={{ duration: 0.5 }}
             className="order-2 lg:order-1"
           >
-            <div className="relative mx-auto max-w-xs">
-              <div className="relative z-10 rounded-[2.5rem] overflow-hidden border-8 border-gray-800 dark:border-gray-700 shadow-xl">
-                <Image
-                  src="https://images.pexels.com/photos/6003286/pexels-photo-6003286.jpeg"
-                  alt="Journeyz App Interface"
-                  width={300}
-                  height={600}
-                  className="w-full"
-                />
+            <div className="relative mx-auto max-w-sm">
+              <div className="relative z-10 rounded-[3rem] overflow-hidden border-[12px] border-gray-800 dark:border-gray-700 shadow-2xl">
+                <div className="relative aspect-[9/19.5] w-full">
+                  <Image
+                    src="/app-preview.jpeg"
+                    alt="Hotfoot App Interface"
+                    fill
+                    className="object-cover object-top"
+                    priority
+                  />
+                </div>
               </div>
-              <div className="absolute top-0 -right-16 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl"></div>
-              <div className="absolute -bottom-10 -left-16 w-32 h-32 bg-cyan-500/20 rounded-full blur-2xl"></div>
+              <div className="absolute top-0 -right-16 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-10 -left-16 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl"></div>
             </div>
           </motion.div>
           
