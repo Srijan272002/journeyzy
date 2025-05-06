@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Hotfoot",
@@ -8,6 +10,14 @@ export const metadata: Metadata = {
 export default function PrivacyPolicy() {
   return (
     <div className="container mx-auto px-4 py-16 max-w-4xl">
+      <Link 
+        href="/" 
+        className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-8 transition-colors"
+      >
+        <ArrowLeft className="h-4 w-4 mr-2" />
+        Back to Home
+      </Link>
+      
       <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <div className="mb-8">
