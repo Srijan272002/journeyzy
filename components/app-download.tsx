@@ -17,9 +17,9 @@ export default function AppDownload() {
             transition={{ duration: 0.5 }}
             className="order-2 lg:order-1"
           >
-            <div className="relative mx-auto max-w-sm">
-              <div className="relative z-10 rounded-[3rem] overflow-hidden border-[12px] border-gray-800 dark:border-gray-700 shadow-2xl">
-                <div className="relative aspect-[9/19.5] w-full">
+            <div className="relative mx-auto max-w-[280px]">
+              <div className="relative z-10 rounded-[2.5rem] overflow-hidden border-[8px] border-gray-800 dark:border-gray-700 shadow-2xl">
+                <div className="relative aspect-[9/19] w-full">
                   <Image
                     src="/app-preview.jpeg"
                     alt="Hotfoot App Interface"
