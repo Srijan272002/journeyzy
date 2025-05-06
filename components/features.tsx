@@ -81,7 +81,14 @@ export default function Features() {
               <div className={cn("p-3 rounded-lg inline-block mb-4", feature.color)}>
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+              <h3 className="text-xl font-semibold mb-3 flex items-center gap-3">
+                {feature.title}
+                {feature.title === "Expense Tracking" && (
+                  <span className="px-2 py-1 text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400 rounded-full">
+                    Coming Soon
+                  </span>
+                )}
+              </h3>
               <p className="text-muted-foreground">{feature.description}</p>
             </motion.div>
           ))}
