@@ -3,11 +3,40 @@
 import { motion } from "@/components/motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Smartphone, CheckCircle2 } from "lucide-react";
+import { Smartphone, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
+
+const screenshots = [
+  { src: "/homepage.png", alt: "Homepage Interface" },
+  { src: "/hotelsearch.png", alt: "Hotel Search Interface" },
+  { src: "/setbudget.png", alt: "Set Budget Interface" },
+  { src: "/hotelpricing.png", alt: "Hotel Pricing Interface" },
+  { src: "/hotels.png", alt: "Hotels List Interface" },
+  { src: "/settings.png", alt: "Settings Interface" },
+  { src: "/travelpreferences.png", alt: "Travel Preferences Interface" },
+  { src: "/tripdetail.png", alt: "Trip Detail Interface" },
+  { src: "/tripsummary.png", alt: "Trip Summary Interface" },
+  { src: "/edititeinary.png", alt: "Edit Itinerary Interface" },
+  { src: "/flightdetail.png", alt: "Flight Detail Interface" }
+];
 
 export default function AppDownload() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === screenshots.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? screenshots.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -17,20 +46,56 @@ export default function AppDownload() {
             transition={{ duration: 0.5 }}
             className="order-2 lg:order-1"
           >
-            <div className="relative mx-auto max-w-[280px]">
-              <div className="relative z-10 rounded-[2.5rem] overflow-hidden border-[8px] border-gray-800 dark:border-gray-700 shadow-2xl">
-                <div className="relative aspect-[9/19] w-full">
-                  <Image
-                    src="/app-preview.jpeg"
-                    alt="Hotfoot App Interface"
-                    fill
-                    className="object-cover object-top"
-                    priority
-                  />
-                </div>
+            <h2 className="text-3xl font-bold mb-8 text-center">App Screenshots</h2>
+            <div className="relative mx-auto max-w-[320px]">
+              {/* Carousel Container */}
+              <div className="relative aspect-[9/19] w-full">
+                {screenshots.map((screenshot, index) => (
+                  <div
+                    key={index}
+                    className={`absolute w-full h-full transition-opacity duration-500 ${
+                      index === currentIndex ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    <Image
+                      src={screenshot.src}
+                      alt={screenshot.alt}
+                      fill
+                      className="object-contain"
+                      priority={index === currentIndex}
+                    />
+                  </div>
+                ))}
               </div>
-              <div className="absolute top-0 -right-16 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-10 -left-16 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl"></div>
+
+              {/* Navigation Buttons */}
+              <button
+                onClick={prevSlide}
+                className="absolute left-[-3rem] top-1/2 transform -translate-y-1/2 p-2 rounded-full bg-black/10 hover:bg-black/20 transition-all"
+              >
+                <ChevronLeft className="h-6 w-6 text-black/70" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="absolute right-[-3rem] top-1/2 transform -translate-y-1/2 p-2 rounded-full bg-black/10 hover:bg-black/20 transition-all"
+              >
+                <ChevronRight className="h-6 w-6 text-black/70" />
+              </button>
+
+              {/* Carousel Indicators */}
+              <div className="absolute bottom-[-2rem] left-1/2 transform -translate-x-1/2 flex space-x-2">
+                {screenshots.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentIndex
+                        ? "bg-blue-600 w-4"
+                        : "bg-gray-300"
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
           </motion.div>
           
@@ -67,28 +132,7 @@ export default function AppDownload() {
             </div>
             
             <div className="flex flex-col gap-2 w-full max-w-[240px]">
-              {/* <Button className="flex items-center justify-center h-[40px] w-full bg-black hover:bg-black/90 rounded-lg px-2">
-                <div className="flex items-center gap-1.5">
-                  <svg viewBox="0 0 24 24" className="w-[16px] h-[16px] flex-shrink-0" fill="currentColor">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                  </svg>
-                  <div className="flex flex-col text-left">
-                    <span className="text-[10px] leading-tight">Download on the</span>
-                    <span className="text-sm font-medium leading-tight">App Store</span>
-                  </div>
-                </div>
-              </Button>
-              <Button className="flex items-center justify-center h-[40px] w-full bg-white hover:bg-white/90 text-black border border-gray-200 rounded-lg px-2">
-                <div className="flex items-center gap-1.5">
-                  <svg viewBox="0 0 24 24" className="w-[16px] h-[16px] flex-shrink-0" fill="currentColor">
-                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-                  </svg>
-                  <div className="flex flex-col text-left">
-                    <span className="text-[10px] leading-tight">GET IT ON</span>
-                    <span className="text-sm font-medium leading-tight">Google Play</span>
-                  </div>
-                </div>
-              </Button> */}
+              {/* Store buttons commented out */}
             </div>
           </motion.div>
         </div>
