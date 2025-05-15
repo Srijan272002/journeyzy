@@ -37,6 +37,12 @@ export default function Navbar() {
           
           <nav className="hidden md:flex items-center space-x-8">
             <Link 
+              href="/flights" 
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Flights
+            </Link>
+            <Link 
               href="/privacy-policy" 
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
